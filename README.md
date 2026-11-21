@@ -206,6 +206,9 @@ Other notes:
 
 Newest first. Format: date · symptom → cause → fix.
 
+- **2026-11-21** · The 422 body is translated with the request language (`error_description_translated`, e.g. a
+  French "update your app" sentence), so match on the status plus a few keywords in both fields, not on the English
+  text only. Clients should surface it as a dedicated "outdated client" error.
 - **2026-11-21** · Every call fails with **422 "Please update your app"** with User-Agent
   `com.bunq.tricount.android:RELEASE:7.0.7:3174:ANDROID:13:C` → the API rejects old app versions →
   User-Agent bumped to `14.6.0:14600`.
